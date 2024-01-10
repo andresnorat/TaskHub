@@ -13,7 +13,7 @@ export class LabsComponent {
     'Mostrar lista'
   ];
 
-  name = 'Andres';
+  name = signal('Andres');
   age = 22;
   status = true;
   img = 'https://w3schools.com/howto/img_avatar.png';
@@ -30,8 +30,8 @@ export class LabsComponent {
 
   changeHandler(event: Event){
     const input =  event.target as HTMLInputElement;
-    const value = input.value
-    console.log(value);
+    const newValue = input.value
+    this.name.set(newValue);
   }
 
   keyDownHandler(event: KeyboardEvent){

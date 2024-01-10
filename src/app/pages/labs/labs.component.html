@@ -10,7 +10,7 @@
 <hr>
 <h2>{{'Mi primera chamba'.repeat(4)}}</h2>
 <p>la suma de 3 + 3 es  {{3 + 3}}</p>
-<p>Hola soy {{ name }} y mi edad es {{ age }}</p>
+<p>Hola soy {{ name() }} y mi edad es {{ age }}</p>
 <hr>
 <img [src]="img" alt="">
 <!-- Property Binding es cuando enlazamos una variable a una propiedad de un elemento con un input-->
@@ -25,12 +25,12 @@
 <p>changeNumber</p>
 <input type="number" [value]="age" (change)="changeHandler($event)">
 <p>changeText</p>
-<input type="text" [value]="name" (change)="changeHandler($event)">
+<input type="text" [value]="name()" (change)="changeHandler($event)">
 <p>keydown</p>
-<input type="text" [value]="name" (keydown)="keyDownHandler($event)">
+<input type="text" [value]="name()" (keydown)="keyDownHandler($event)">
 <p>keydown shift t</p>
-<input type="text" [value]="name" (keydown.shift.t)="clickHandler()">
+<input type="text" [value]="name()" (keydown.shift.t)="clickHandler()">
 </div>
 <h1>Signals</h1>
 <p>changeText</p>
-<input type="text" [value]="name" (change)="changeHandler($event)">
+<input type="text" [value]="name()" (change)="changeHandler($event)">
