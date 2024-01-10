@@ -7,11 +7,11 @@ import { Component, signal } from '@angular/core';
 })
 export class LabsComponent {
   welcome = 'Hola';
-  tasks = [
+  tasks = signal([
     'Instalar angular',
     'Crear proyecto',
     'Mostrar lista'
-  ];
+  ]);
 
   name = signal('Andres');
   age = 22;

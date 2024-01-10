@@ -3,7 +3,7 @@
   <h1>Mi primera chamba</h1>
 <h2>{{welcome}}</h2>
 <ul>
-  <li *ngFor="let task of tasks">
+  <li *ngFor="let task of tasks()">
     {{ task }}
   </li>
 </ul>
@@ -34,3 +34,9 @@
 <h1>Signals</h1>
 <p>changeText</p>
 <input type="text" [value]="name()" (change)="changeHandler($event)">
+<ul>
+  <p>total: {{tasks().length}}</p>
+  <li *ngFor="let task of tasks(); index as i">
+    {{i }} {{ task }}
+  </li>
+</ul>
