@@ -40,3 +40,15 @@
     {{i }} {{ task }}
   </li>
 </ul>
+
+<!-- ngSwitch -->
+<input type="text"  [value]="person().name" (change)="changeHandlerOnbject($event)" >
+<div [ngSwitch]="person().name">
+    <p *ngSwitchCase="'andres'">soy andres</p>
+    <p *ngSwitchCase="'camilo'">soy camilo</p>
+    <p *ngSwitchCase="'juan'">soy juan</p>
+    <p *ngSwitchDefault>default</p>
+</div>
+
+<input type="color" [formControl]="colorCtrol">
+<p>color: {{colorCtrol.value}}</p>

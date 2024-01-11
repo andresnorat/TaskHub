@@ -1,4 +1,5 @@
 import { Component, signal } from '@angular/core';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-labs',
@@ -6,6 +7,16 @@ import { Component, signal } from '@angular/core';
   styleUrls: ['./labs.component.css']
 })
 export class LabsComponent {
+
+colorCtrol =  new FormControl();
+
+constructor(){
+  this.colorCtrol.valueChanges
+  .subscribe((value)=> {
+    console.log(value);
+  })
+}
+
   welcome = 'Hola';
   tasks = signal([
     'Instalar angular',
@@ -18,11 +29,11 @@ export class LabsComponent {
   status = true;
   img = 'https://w3schools.com/howto/img_avatar.png';
 
-  person = {
+  person = signal({
     name: 'Carlos',
     age: 48,
     img: 'https://w3schools.com/howto/img_avatar.png'
-  }
+  });
 
   clickHandler(){
     alert('Hola');
@@ -39,4 +50,18 @@ export class LabsComponent {
     const value =  input.value;
     console.log(value);
   }
+
+
+  changeHandlerOnbject(event: Event){
+    const input =  event.target as HTMLInputElement;
+    const newValue = input.value;
+    this.person.update((prevState) => {
+      return {
+        ...prevState,
+        name: newValue
+      }
+    });
+  }
+
+
 }
